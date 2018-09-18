@@ -37,6 +37,9 @@ gem 'figaro'
 gem 'devise'
 gem 'rolify'
 gem 'doorkeeper'
+gem 'watir'
+gem 'webdrivers'
+gem 'roo'
 
 
 # Reduces boot times through caching; required in config/boot.rb
