@@ -10,4 +10,12 @@ class User < ApplicationRecord
   def assign_user_role
     self.add_role(:user)
   end
+
+  def generate_access_token(app)
+    Doorkeeper::AccessToken.find_or_create_for(app, id, 'user read and write preference', nil, true)
+  end
+
+  # def generate_access_token(app)
+  #   Doorkeeper::AccessToken.find_or_create_for(app, id, 'user read and write preference', 8.hours, true)
+  # end
 end
