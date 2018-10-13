@@ -40,6 +40,9 @@ gem 'doorkeeper'
 gem 'watir'
 gem 'webdrivers'
 gem 'roo'
+gem "therubyracer"
+gem "less-rails" #Sprockets (what Rails 3.1 uses for its asset pipeline) supports LESS
+gem "twitter-bootstrap-rails"
 
 
 # Reduces boot times through caching; required in config/boot.rb
