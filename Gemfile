@@ -40,6 +40,8 @@ gem 'doorkeeper'
 gem 'watir'
 gem 'webdrivers'
 gem 'roo'
+gem 'faker'
+gem 'kaminari'
 
 
 # Reduces boot times through caching; required in config/boot.rb
