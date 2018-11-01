@@ -42,6 +42,8 @@ gem 'webdrivers'
 gem 'roo'
 gem 'faker'
 gem 'kaminari'
+gem "paperclip", "~> 6.0.0"
+gem 'activerecord-import'
 
 
 # Reduces boot times through caching; required in config/boot.rb
