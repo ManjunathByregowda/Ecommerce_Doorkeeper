@@ -8,7 +8,6 @@ class CreateProducts < ActiveRecord::Migration[5.2]
       t.integer :category_id
       t.boolean :cod_eligible
       t.datetime :release_datetime
-      t.string :image_url
 
       t.timestamps
     end

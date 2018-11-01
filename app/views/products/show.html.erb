@@ -36,8 +36,8 @@
 </p>
 
 <p>
-  <strong>Image url:</strong>
-  <%= @product.image_url %>
+  <strong>Image:</strong>
+  <img src="<%= @product.avatar%>">
 </p>
 
 <%= link_to 'Edit', edit_product_path(@product) %> |
