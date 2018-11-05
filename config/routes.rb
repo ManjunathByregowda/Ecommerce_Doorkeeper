@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
-  resources :products
+  resources :products do
+    collection do
+      get :autocomplete
+    end
+  end
   resources :categories
   use_doorkeeper
   devise_for :users

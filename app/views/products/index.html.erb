@@ -1,5 +1,21 @@
 <p id="notice"><%= notice %></p>
 
+<%= javascript_include_tag "products.js", "data-turbolinks-track" => true  %>
+<%= form_tag(products_path, method: :get, class: "form-inline", role: "search") do %>
+  <div class="input-group">
+    <%= text_field_tag :term, 
+      params[:term],
+      id: 'product_search',
+      autocomplete: :off,
+      placeholder: "Search", 
+      class: "form-control typeahead" %>
+    <div class="input-group-btn search-panel">
+      <%= submit_tag "search", class: "btn btn-default"%>
+      <%= link_to "Clear", root_url, class: "btn btn-default" %>
+    </div>
+  </div>
+<% end %>
+
 <h1>Products</h1>
 
 <table>

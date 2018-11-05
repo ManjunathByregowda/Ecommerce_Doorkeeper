@@ -44,6 +44,8 @@ gem 'faker'
 gem 'kaminari'
 gem "paperclip", "~> 6.0.0"
 gem 'activerecord-import'
+gem 'searchkick'
+gem 'jquery-rails'
 
 
 # Reduces boot times through caching; required in config/boot.rb

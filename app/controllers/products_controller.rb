@@ -4,7 +4,13 @@ class ProductsController < ApplicationController
   # GET /products
   # GET /products.json
   def index
-    @products = Product.all.page params[:page]
+    search = params[:term].present? ? params[:term] : nil
+    if search
+      search_products = Product.search(search).results
+      @products = Kaminari.paginate_array(search_products).page(params[:page])
+    else
+      @products = Product.all.page params[:page]
+    end
   end
 
   # GET /products/1
@@ -19,6 +25,16 @@ class ProductsController < ApplicationController
 
   # GET /products/1/edit
   def edit
+  end
+
+  def autocomplete
+    render json: Product.search(params[:query],{
+      fields: ["name", "description"],
+      match: :word_start,
+      limit: 10,
+      load: false,
+      misspellings: {below: 5}
+    }).map(&:name)
   end
 
   # POST /products
